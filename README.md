@@ -110,7 +110,7 @@ If you use this codebase in your projects, please include appropriate credits:
 
 ```plaintext
 This project uses RAT (Retrieval Augmented Thinking) by Skirano
-GitHub: https://github.com/yourusername/rat
+GitHub: https://github.com/Doriandarko/RAT-retrieval-augmented-thinking
 ```
 ---
 
