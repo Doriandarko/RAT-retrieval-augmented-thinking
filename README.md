@@ -24,15 +24,44 @@ This approach ensures more thoughtful, contextually aware, and reliable response
 - 🧠 **Reasoning Visibility**: Toggle visibility of the AI's thinking
 - 🔄 **Context Awareness**: Maintains conversation context for more coherent interactions
 
+## 🚀 Versions
+You can run each script variant:
+
+### Standard Version (rat.py)
+The default implementation using DeepSeek for reasoning and OpenRouter for responses.
+Run it using:
+```bash
+uv run rat.py
+```
+
+### Claude-Specific Version (rat-claude.py)
+A specialized implementation designed for Claude models that leverages Anthropic's message prefilling capabilities. This version makes Claude believe the reasoning process is its own internal thought process, leading to more coherent and contextually aware responses.
+Run it using:
+```bash
+uv run rat-claude.py
+```
+
+### Akash Version (rat-akash.py)
+An implementation that uses the Akash network's API for both reasoning (DeepSeek-R1) and response generation (Llama models). This version provides access to powerful open-source models hosted on the decentralized Akash network.
+Run it using:
+```bash
+uv run rat-akash.py
+```
+
 ## ⚙️ Requirements
 
 • Python 3.11 or higher  
-• A .env file containing:
+• A .env file containing one or more of:
   ```plaintext
+  # For standard version:
   DEEPSEEK_API_KEY=your_deepseek_api_key_here
   OPENROUTER_API_KEY=your_openrouter_api_key_here
-  optional
+  
+  # For Claude version:
   ANTHROPIC_API_KEY=your_anthropic_api_key_here
+  
+  # For Akash version:
+  AKASH_API_KEY=your_akash_api_key_here
   ```
 
 ## 🚀 Installation
@@ -60,7 +89,12 @@ This will install RAT as a command-line tool, allowing you to run it from anywhe
    OPENROUTER_API_KEY=your_openrouter_api_key_here
    optional
    ANTHROPIC_API_KEY=your_anthropic_api_key_here 
+   AKASH_API_KEY=your_akash_api_key_here
    ```
+   
+   To get an Akash API key:
+   - Visit https://chatapi.akash.network/
+   - Click "Get Started" to generate a free API key
 
 2. Run RAT from anywhere:
    ```bash
@@ -73,24 +107,6 @@ This will install RAT as a command-line tool, allowing you to run it from anywhe
    - Type "reasoning" to show/hide the thinking process
    - Type "quit" to exit
 
-
-
-## 🚀 Versions
-You can also run each script on its own:
-
-### Standard Version (rat.py)
-The default implementation using DeepSeek for reasoning and OpenRouter for responses.
-Run it using:
-```bash
-uv run rat.py
-```
-
-### Claude-Specific Version (rat-claude.py)
-A specialized implementation designed for Claude models that leverages Anthropic's message prefilling capabilities. This version makes Claude believe the reasoning process is its own internal thought process, leading to more coherent and contextually aware responses.
-Run it using:
-```bash
-uv run rat-claude.py
-```
 
 
 ## 🤝 Contributing
